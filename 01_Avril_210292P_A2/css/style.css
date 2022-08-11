@@ -1,0 +1,290 @@
+/*common classes*/
+html, body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-image: url('../images/background.png');
+}
+
+/* navigation bar */
+.navbar{
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+}
+
+#links{
+    display: block;
+}
+
+.navbar a{ 
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+}
+
+.navbar a.icon {
+    display: block;
+    position: absolute;                                
+    right: 0;
+    top: 0;
+}
+
+.hamburgericon{
+    height: 14px;
+    width: 16px;
+}
+
+/* copyright style */
+footer {
+    text-align: center;
+    padding: 2vh;
+    background-color: #333;
+    color: white;
+}
+
+/* responsive webpage to show hamburger icon */
+@media screen and (min-width: 540px){
+    /* .navbar a:not(:first-child) {display: none;} */
+    .navbar a.icon {
+        float: right;
+        display: none;
+    }
+    #links{
+        display: flex;
+    }
+} 
+
+@media screen and (min-width: 540px){
+    .navbar.responsive {position:relative;}
+    .navbar.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .navbar.responsive a{
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
+
+/* Style the active link (or home/logo) */
+.active {
+    background-color: purple;
+    color: white;
+}
+
+.square{
+    width: 100%;
+}
+
+.square img{
+    object-fit: contain;
+}
+
+/*index.html*/
+.intro{
+    display: flex;
+    flex-direction: column;
+    align-content: space-evenly;
+    text-align: center;
+    padding-bottom: 5px;
+    width: 100%;
+}
+
+.pages{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-evenly;
+    background-color: purple;
+    padding: 5px;
+    color: white
+}
+
+.about, .menu, .health{
+    display: flex;
+    /* justify-content: space-between; */
+    flex-wrap: wrap;
+    padding: 5px;
+    width: 100%;
+    height:  50%;
+}
+
+.healthtext{
+    padding: 10px;
+}
+
+.abouttext{
+    padding: 30px;
+}
+
+.menutext{
+    padding: 45px;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.introimg{
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
+
+.aboutimg, .menuimg, .healthimg{
+    height: 20%;
+    width: 50%;
+}
+
+/* index page on ipad and desktop */
+@media screen and (min-width: 720px){
+    .intro{
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        padding: 30px;
+    }
+    
+    
+    .pages{
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        padding: 0;
+    }
+    
+    .pages h1{
+        width: 100%;
+    }
+
+    .about, .menu, .health{
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+        width: 30%;
+        height: 100%;
+    }
+
+    .abouttext, .menutext, .healthtext{
+        padding: 0;
+    }
+}
+
+/*about.html*/
+.aboutcontent{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.aboutcontent .aboutname, .aboutcontent .location, .aboutcontent .uses, .aboutcontent .popularity{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.aboutname, .uses{
+    background-color: yellow;
+}
+
+.aboutnametext, .locationtext, .usestext, .popularitytext{
+    text-align: center;
+}
+
+/* About page on ipad & desktop screen */
+@media screen and (min-width: 720px){
+    .aboutcontent{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .aboutcontent .aboutname, .aboutcontent .location, .aboutcontent .uses, .aboutcontent .popularity{
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding: 5vh;
+    }
+}
+
+/*create.html*/
+.menuInteraction{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: grey;
+    color: beige;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+.interaction{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.interactionarea{
+    width: 80%;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 2px;
+    margin: 10%;
+}
+
+.button {
+    background-color: purple;
+    border: none;
+    color: beige;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+@media screen and (min-width: 720px){
+    .interaction{
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
+        padding-right: 30px;
+    }
+}
+
+/*health.html*/
+.healthcontent{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+}
+
+.acaiHealth, .acaiHealthtitle, .granolaHealth, .granolaHealthtitle, .toppingHealth, .toppingHealthtitle{
+    background-color: green;
+}
+
+.acaiHealthtitle, .nutbutterHealthtitle, .granolaHealthtitle, .fruitHealthtitle, .toppingHealthtitle{
+    text-decoration: underline;
+}
+
+@media screen and (min-width: 720px){
+    .acaiHealth, .nutbutterHealth, .granolaHealth, .fruitHealth, .toppingHealth{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        padding-bottom: 50px;
+    }
+}
